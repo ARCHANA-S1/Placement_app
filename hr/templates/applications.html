@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%block mainblock%}
+
+<table class="table">
+    <tr>
+        <th>Applicant Name</th>
+        <th>Applied Date</th>
+        <th>Application Status</th>
+        <th>Action</th>
+    </tr>
+    {%for app in data%}
+    <tr>
+        <td>{{app.student}}</td>
+        <td>{{app.applied_date}}</td>
+        <td>{{app.status}}</td>
+        <td><a href="{%url 'application_detail' app.id%}">view</a></td>
+    </tr>
+    {%endfor%}
+</table>
+{%endblock%}
